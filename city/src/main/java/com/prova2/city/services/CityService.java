@@ -4,9 +4,13 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import com.prova2.city.entities.City;
 import com.prova2.city.repositories.CityRepository;
+
+import jakarta.persistence.EntityNotFoundException;
 
 @Service
 public class CityService {
@@ -15,5 +19,18 @@ public class CityService {
 
     public List<City> getCities(){
         return cityRepository.findAll();
+    }
+
+    public City getCityById(int id){
+        return cityRepository.findById(id) .orElseThrow(() -> new EntityNotFoundException("Cidade não cadastrada"));
+    }
+
+    public void deleteCitytById(int id){
+        if(this.cityRepository.existsById(id)){
+            this.cityRepository.deleteById(id);
+        }
+        else{
+            throw new EntityNotFoundException("Cidade não cadastrada");
+        }
     }
 }
