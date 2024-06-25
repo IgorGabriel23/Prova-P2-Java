@@ -25,13 +25,7 @@ public class CityController {
         return cityService.getCities();
     }
 
-    @GetMapping("{id}")
-    public City getCityById(@PathVariable int id){
-        return cityService.getCityById(id);
-    }
+    
 
-    @DeleteMapping("{id}")
-    public void deleteCitytById(@PathVariable int id){
-        this.cityService.deleteCitytById(id);
-    }
+    
 }
