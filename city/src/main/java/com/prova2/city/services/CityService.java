@@ -30,5 +30,13 @@ public class CityService {
         throw new UnsupportedOperationException("Unimplemented method 'update'");
     }
 
-    
+    public void deleteCitytById(int id){
+        if(this.cityRepository.existsById(id)){
+            this.cityRepository.deleteById(id);
+        }
+        else{
+            throw new EntityNotFoundException("Cidade não cadastrada");
+        }
+    }
+
 }

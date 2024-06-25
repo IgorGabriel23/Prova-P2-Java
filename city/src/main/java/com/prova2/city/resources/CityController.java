@@ -38,5 +38,9 @@ public class CityController {
         this.cityService.update(id, city);
     }
 
-    
+    @DeleteMapping("{id}")
+    public void deleteCitytById(@PathVariable int id){
+        this.cityService.deleteCitytById(id);
+    }
+
 }
