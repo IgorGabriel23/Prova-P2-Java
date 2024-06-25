@@ -25,5 +25,10 @@ public class CityService {
         return cityRepository.findById(id) .orElseThrow(() -> new EntityNotFoundException("Cidade não cadastrada"));
     }
 
+    public void update(int id, City city) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'update'");
+    }
+
     
 }
