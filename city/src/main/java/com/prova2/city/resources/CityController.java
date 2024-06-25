@@ -25,7 +25,10 @@ public class CityController {
         return cityService.getCities();
     }
 
-    
+    @GetMapping("{id}")
+    public City getCityById(@PathVariable int id){
+        return cityService.getCityById(id);
+    }
 
     
 }

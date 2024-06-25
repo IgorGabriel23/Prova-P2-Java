@@ -21,7 +21,9 @@ public class CityService {
         return cityRepository.findAll();
     }
 
-    
+    public City getCityById(int id){
+        return cityRepository.findById(id) .orElseThrow(() -> new EntityNotFoundException("Cidade não cadastrada"));
+    }
 
     
 }
