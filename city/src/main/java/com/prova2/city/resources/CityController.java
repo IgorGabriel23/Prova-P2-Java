@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.prova2.city.dto.CityResponse;
 import com.prova2.city.entities.City;
 import com.prova2.city.services.CityService;
 
@@ -24,7 +25,7 @@ public class CityController {
     private CityService cityService;
 
     @GetMapping
-    public ResponseEntity<List<City>> getCities(){
+    public ResponseEntity<List<CityResponse>> getCities(){
         return ResponseEntity.ok(cityService.getCities());
     }
 
